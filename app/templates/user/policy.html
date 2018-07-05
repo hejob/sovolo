@@ -1,0 +1,47 @@
+{% extends "container.html" %}
+{% load i18n %}
+
+{% block title %} User Policy | Sovol{% endblock %}
+
+
+{% block content %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{% if LANGUAGE_CODE == "en-us" %}
+
+<div class="panel panel-default">
+  <div class="panel-heading">User Policy</div>
+  <div class="panel-body">
+    <h2>Policy 1</h2>
+    <p>Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1Policy 1</p>
+    <h2>Policy 2</h2>
+    <p>Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2Policy 2</p>
+    <h2>Policy 3</h2>
+    <p>Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3Policy  3</p>
+    <h2>Policy 4</h2>
+    <p>Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4Policy 4</p>
+  </div>
+</div>
+
+{% else %}
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">ポリシー</div>
+  <div class="panel-body">
+    <h2>ポリシー 1</h2>
+    <p>ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1ポリシー 1</p>
+    <h2>ポリシー 2</h2>
+    <p>ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2ポリシー 2</p>
+    <h2>ポリシー 3</h2>
+    <p>ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3ポリシー  3</p>
+    <h2>ポリシー 4</h2>
+    <p>ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4ポリシー 4</p>
+  </div>
+</div>
+
+{% endif %}
+
+
+{% endblock %}

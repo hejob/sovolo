@@ -247,6 +247,11 @@ def logout(request):
     return auth_views.logout(request, next_page="/")
 
 
+def policy(request):
+    return render(request, 'user/policy.html',
+        {
+        })
+
 # Review
 
 class UserPostReviewView(FormView):

@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django_gulp',
+    'privacypolicy.apps.PolicyConfig',
     'event.apps.EventConfig',
     'tag.apps.TagConfig',
     'user.apps.UserConfig',

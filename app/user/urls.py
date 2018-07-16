@@ -67,8 +67,4 @@ urlpatterns = [
     url(r'^filter/tag_users$',
         api.user_filter, {'user_kind': 'tag_users'},
         name='tag_users'),
-
-    url(r'^policy/$',
-        views.policy,
-        name='policy'),    
 ]

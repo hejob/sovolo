@@ -1,0 +1,30 @@
+{% extends "container.html" %}
+{% load i18n %}
+
+{% block title %} Privacy Policy | Sovol{% endblock %}
+
+
+{% block content %}
+
+{% if policy %}
+<div class="panel panel-default">
+  <div class="panel-heading">{{ policy.name }}</div>
+  <div class="panel-body">
+    <p>
+      {{ policy.html }}
+    </p>
+  </div>
+</div>
+{% else %}
+<div class="panel panel-default">
+  <div class="panel-heading">Privacy Policy</div>
+  <div class="panel-body">
+    <p>
+      Empty
+    </p>
+  </div>
+</div>
+{% endif %}
+
+
+{% endblock %}

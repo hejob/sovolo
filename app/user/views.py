@@ -20,6 +20,9 @@ from event.models import Event
 from django.utils import translation
 from django.conf import settings
 
+from datetime import datetime
+from django.utils import timezone
+
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Q
 from django.apps import apps
@@ -76,9 +79,23 @@ class UserCreateView(CreateView):
 class UserActivationView(View):
     def get(self, request, *args, **kwargs):
         activation = get_object_or_404(UserActivation, key=kwargs['key'])
+
+        # check validation time
+        created = activation.created
+        now = timezone.now()
+        dt = now - created
+
+        if (dt.seconds > 24*60*60):
+            # expired
+            raise Http404
+
         user = activation.user
+        if user is None:
+            raise Http404
+
         user.is_active = True
         user.save()
+
         login(request, user, "django.contrib.auth.backends.ModelBackend")
         messages.info(request, _("You have successfully registered!"))
         return redirect("top")
